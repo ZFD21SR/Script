@@ -11,11 +11,11 @@ read dsav
 if [ "$dsav" = "y" ]; then
 	echo "Creation d'une archive de sauvegarde"
 	#Creation de l'archive
-	backup_files="/Programmation /Systeme_Et_Reseaux /Web /Projet"
+	backup_files="/Programmation" "/Systeme_Et_Reseaux" "/Web" "/Projet"
 	dest="/home/"
-	day=$(date +%A)
-	hostname= $(hostname -s)
-	archive_file="DataSave-$hostname-$day.tgz"
+	day=$date
+	hostname= $hostname
+	archive_file="DataSave-"$hostname"-"$day".tgz"
 	tar czf $dest/$archive_file $backup_files
 	echo "Archive creer dans" $HOME
 elif [ "$dsav" = "n" ]; then
